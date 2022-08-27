@@ -33,7 +33,7 @@ type CounterProps = {
   // useReducerのメリット
   // 状態の更新を呼び出す方(ここでいうbuttonのonClick)は、具体的な状態に依存していないので、コードをシンプルに保てる
   // 状態を更新するロジック(ここでいうreducerメソッド)をコンポーネントギアの関数に切り出してるため、テストが容易
-const Counter = (props: CounterProps) => {
+const Counter2 = (props: CounterProps) => {
   const { initialValue } = props
   const [count, dispatch] = useReducer(reducer, initialValue)
 
@@ -49,4 +49,4 @@ const Counter = (props: CounterProps) => {
   )
 }
 
-export default Counter
+export default Counter2
