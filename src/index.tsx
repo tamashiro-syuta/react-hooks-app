@@ -25,6 +25,8 @@ root.render(
       <MyButton href="/">Home</MyButton>
       <MyButton href="/UseStateSample">UseStateSample</MyButton>
       <MyButton href="/UseReducerSample">UseReducerSample</MyButton>
+      <MyButton href="/MemoSample1">MemoSample1</MyButton>
+      <MyButton href="/MemoSample2">MemoSample2</MyButton>
 
       <Routing />
     </Container>
