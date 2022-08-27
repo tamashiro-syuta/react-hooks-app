@@ -1,9 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import { Routing } from './Routes';
-import { Button } from '@mui/material';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { Routing } from "./Routes";
+import MyButton from "./originalComponent/myButton";
+import Counter from "./components/UseStateSample";
+import { Container } from "@mui/system";
 
 // 【Reactのコードが反映されるまでの順序】
 // 1.public/index.htmlが読み込まれて、ブラウザで表示
@@ -12,35 +14,20 @@ import { Button } from '@mui/material';
 
 // idがrootの要素を指定
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 
 root.render(
   <React.StrictMode>
-    <h1>React hooksの使い方</h1>
+    <Container fixed>
+      <h1>React hooksの使い方</h1>
 
-    <Button
-      variant='contained'
-      sx={{margin: 1}}
-      href='/'
-    >
-      Home
-    </Button>
-    <Button
-      variant='contained'
-      sx={{margin: 1}}
-      href='/UseStateSample'
-    >
-      UseStateSample
-    </Button>
-    <Button
-      variant='contained'
-      sx={{margin: 1}}
-      href='/UseReducerSample'
-    >
-      UseReducerSample
-    </Button>
-    <Routing />
+      <MyButton href="/">Home</MyButton>
+      <MyButton href="/UseStateSample">UseStateSample</MyButton>
+      <MyButton href="/UseReducerSample">UseReducerSample</MyButton>
+
+      <Routing />
+    </Container>
   </React.StrictMode>
 );
 
