@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Counter from './components/UseStateSample';
+import { Routing } from './Routes';
+import { Button } from '@mui/material';
 
 // 【Reactのコードが反映されるまでの順序】
 // 1.public/index.htmlが読み込まれて、ブラウザで表示
@@ -18,12 +17,30 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <h1>React hooksの使い方</h1>
-      <Routes>
-        <Route path={`/`} element={<Counter initialValue={0} />} />
-      </Routes>
-    </BrowserRouter>
+    <h1>React hooksの使い方</h1>
+
+    <Button
+      variant='contained'
+      sx={{margin: 1}}
+      href='/'
+    >
+      Home
+    </Button>
+    <Button
+      variant='contained'
+      sx={{margin: 1}}
+      href='/UseStateSample'
+    >
+      UseStateSample
+    </Button>
+    <Button
+      variant='contained'
+      sx={{margin: 1}}
+      href='/UseReducerSample'
+    >
+      UseReducerSample
+    </Button>
+    <Routing />
   </React.StrictMode>
 );
 
