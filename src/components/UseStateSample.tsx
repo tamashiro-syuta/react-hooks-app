@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 // 引数(親コンポーネントから受け取る値の型を定義)
 type CounterProps = {
@@ -14,17 +14,12 @@ const Counter = (props: CounterProps) => {
 
   return (
     <div>
-      <p>count: {count}</p>
-      <button
-        onClick={() => setCount(count - 1)}
-        style={{ height: "50px", width: "150px", fontSize: "30px", margin: 5 }}
-      >minus</button>
+      <p>Count: {count}</p>
+
+      <button onClick={() => setCount(count - 1)}>-</button>
 
       {/* 更新関数(setCount)の引数に関数を渡した場合、関数の引数(ここでいうprevCount)には、現在の値が入ってる */}
-      <button
-        onClick={() => setCount((prevCount) => prevCount + 1)}
-        style={{ height: "50px", width: "150px", fontSize: "30px", margin: 3 }}
-      >plus</button>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>+</button>
     </div>
   )
 }
