@@ -43,6 +43,7 @@ export const Parent = () => {
       <p>{`現在のカウント: ${count}`}</p>
       <p>
         <Fizz isFizz={isFizz} />
+        {/* BuzzのonClickに、Parentが持つ関数がセットされてるため、Buzzをメモ化してもonClickが反応し、毎回Buzzが再レンダリングされてしまう */}
         <Buzz isBuzz={isBuzz} onClick={onBuzzClick} />
       </p>
     </div>
