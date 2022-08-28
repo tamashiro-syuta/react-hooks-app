@@ -60,8 +60,10 @@ export const Parent = () => {
     <div>
       <p>Count: {count}</p>
       {/* コンポーネントに関数を渡す */}
+      {/* メモ化も、useCallbackもされてないので、Parentがレンダリングされる度に再レンダリングされる */}
       <DecrementButton onClick={decrement} />
       {/* メモ化コンポーネントに関数を渡す */}
+      {/* メモ化はしているが、親コンポーネント(Parent)から渡される関数がuseCallbackされてないので、Prentがレンダリングされる度に、再レンダリングされる */}
       <IncrementButton onClick={increment} />
       {/* メモ化コンポーネントにメモ化した関数を渡す */}
       <DoubleButton onClick={double} />
