@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Parent from "./components/MemoSample1";
 import { Parent as Parent2 } from "./components/MemoSample2";
 import { Parent as Parent3 } from "./components/UseCallbackSample";
+import { Parent as Parent4 } from "./components/UseContextSample";
 import Clock from "./components/UseEffectSample";
 import { Clock as Clock2 } from "./components/UseLayoutEffectSample";
 import UseMemoSample from "./components/UseMemoSample";
@@ -26,6 +27,7 @@ export const Routing = () => {
         <Route path={`UseMemoSample`} element={<UseMemoSample />} />
         <Route path={`UseEffectSample`} element={<Clock />} />
         <Route path={`UseLayoutEffect`} element={<Clock2 />} />
+        <Route path={`useContextSample`} element={<Parent4 />} />
       </Routes>
     </BrowserRouter>
   );

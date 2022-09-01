@@ -31,6 +31,7 @@ root.render(
       <MyButton href="/UseMemoSample">UseMemoSample</MyButton>
       <MyButton href="/UseEffectSample">UseEffectSample</MyButton>
       <MyButton href="/UseLayoutEffect">UseLayoutEffect</MyButton>
+      <MyButton href="/useContextSample">useContextSample</MyButton>
 
       <Routing />
     </Container>
