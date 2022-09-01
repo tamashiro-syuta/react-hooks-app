@@ -56,6 +56,9 @@ root.render(
       <Grid item xs={4}>
         <MyButton href="/useContextSample">useContextSample</MyButton>
       </Grid>
+      <Grid item xs={4}>
+        <MyButton href="/UseRefSample">UseRefSample</MyButton>
+      </Grid>
 
       <Grid item xs={12}>
         <Routing />

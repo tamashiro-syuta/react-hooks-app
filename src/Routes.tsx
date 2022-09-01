@@ -7,6 +7,7 @@ import Clock from "./components/UseEffectSample";
 import { Clock as Clock2 } from "./components/UseLayoutEffectSample";
 import UseMemoSample from "./components/UseMemoSample";
 import Counter2 from "./components/UseReducerSample";
+import ImageUploader from "./components/UseRefSample";
 import Counter from "./components/UseStateSample";
 
 export const Routing = () => {
@@ -28,6 +29,7 @@ export const Routing = () => {
         <Route path={`UseEffectSample`} element={<Clock />} />
         <Route path={`UseLayoutEffect`} element={<Clock2 />} />
         <Route path={`useContextSample`} element={<Parent4 />} />
+        <Route path={`UseRefSample`} element={<ImageUploader />} />
       </Routes>
     </BrowserRouter>
   );
