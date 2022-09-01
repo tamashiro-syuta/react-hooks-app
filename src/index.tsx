@@ -6,6 +6,7 @@ import { Routing } from "./Routes";
 import MyButton from "./originalComponent/myButton";
 import Counter from "./components/UseStateSample";
 import { Container } from "@mui/system";
+import { Grid } from "@mui/material";
 
 // 【Reactのコードが反映されるまでの順序】
 // 1.public/index.htmlが読み込まれて、ブラウザで表示
@@ -19,22 +20,47 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <Container fixed>
-      <h1>React hooksの使い方</h1>
+    <Grid container>
+      <Grid item xs={12}>
+        <h1>React hooksの使い方</h1>
+        <p>devツールのコンソールなどを利用して、hooksの挙動を理解する</p>
+      </Grid>
 
-      <MyButton href="/">Home</MyButton>
-      <MyButton href="/UseStateSample">UseStateSample</MyButton>
-      <MyButton href="/UseReducerSample">UseReducerSample</MyButton>
-      <MyButton href="/MemoSample1">MemoSample1</MyButton>
-      <MyButton href="/MemoSample2">MemoSample2</MyButton>
-      <MyButton href="/UseCallbackSample">UseCallbackSample</MyButton>
-      <MyButton href="/UseMemoSample">UseMemoSample</MyButton>
-      <MyButton href="/UseEffectSample">UseEffectSample</MyButton>
-      <MyButton href="/UseLayoutEffect">UseLayoutEffect</MyButton>
-      <MyButton href="/useContextSample">useContextSample</MyButton>
+      <Grid item xs={4}>
+        <MyButton href="/">Home</MyButton>
+      </Grid>
+      <Grid item xs={4}>
+        <MyButton href="/UseStateSample">UseStateSample</MyButton>
+      </Grid>
+      <Grid item xs={4}>
+        <MyButton href="/UseReducerSample">UseReducerSample</MyButton>
+      </Grid>
+      <Grid item xs={4}>
+        <MyButton href="/MemoSample1">MemoSample1</MyButton>
+      </Grid>
+      <Grid item xs={4}>
+        <MyButton href="/MemoSample2">MemoSample2</MyButton>
+      </Grid>
+      <Grid item xs={4}>
+        <MyButton href="/UseCallbackSample">UseCallbackSample</MyButton>
+      </Grid>
+      <Grid item xs={4}>
+        <MyButton href="/UseMemoSample">UseMemoSample</MyButton>
+      </Grid>
+      <Grid item xs={4}>
+        <MyButton href="/UseEffectSample">UseEffectSample</MyButton>
+      </Grid>
+      <Grid item xs={4}>
+        <MyButton href="/UseLayoutEffect">UseLayoutEffect</MyButton>
+      </Grid>
+      <Grid item xs={4}>
+        <MyButton href="/useContextSample">useContextSample</MyButton>
+      </Grid>
 
-      <Routing />
-    </Container>
+      <Grid item xs={12}>
+        <Routing />
+      </Grid>
+    </Grid>
   </React.StrictMode>
 );
 
