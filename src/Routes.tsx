@@ -3,6 +3,7 @@ import Parent from "./components/MemoSample1";
 import { Parent as Parent2 } from "./components/MemoSample2";
 import { Parent as Parent3 } from "./components/UseCallbackSample";
 import Clock from "./components/UseEffectSample";
+import { Clock as Clock2 } from "./components/UseLayoutEffectSample";
 import UseMemoSample from "./components/UseMemoSample";
 import Counter2 from "./components/UseReducerSample";
 import Counter from "./components/UseStateSample";
@@ -24,6 +25,7 @@ export const Routing = () => {
         <Route path={`/UseCallbackSample`} element={<Parent3 />} />
         <Route path={`UseMemoSample`} element={<UseMemoSample />} />
         <Route path={`UseEffectSample`} element={<Clock />} />
+        <Route path={`UseLayoutEffect`} element={<Clock2 />} />
       </Routes>
     </BrowserRouter>
   );
