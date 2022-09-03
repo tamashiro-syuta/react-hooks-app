@@ -25,7 +25,7 @@ const Buzz = memo<BuzzProps>((props) => {
   return <span>{isBuzz ? "Buzz" : ""}</span>;
 });
 
-const Parent = () => {
+export const Parent = () => {
   const [count, setCount] = useState(1);
   const isFizz = count % 3 === 0;
   const isBuzz = count % 5 === 0;
@@ -42,5 +42,3 @@ const Parent = () => {
     </div>
   );
 };
-
-export default Parent;

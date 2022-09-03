@@ -22,7 +22,7 @@ const getLocaleFromString = (text: string) => {
   }
 };
 
-const Clock = () => {
+export const Clock = () => {
   const [timestamp, setTimestamp] = useState(new Date());
   const [locale, setLocale] = useState(Locale.US);
 
@@ -75,5 +75,3 @@ const Clock = () => {
     </div>
   );
 };
-
-export default Clock;

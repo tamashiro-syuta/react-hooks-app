@@ -4,7 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { Routing } from "./Routes";
 import MyButton from "./originalComponent/myButton";
-import Counter from "./components/UseStateSample";
+import { Counter } from "./components/UseStateSample";
 import { Container } from "@mui/system";
 import { Grid } from "@mui/material";
 

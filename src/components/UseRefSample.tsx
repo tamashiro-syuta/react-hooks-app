@@ -10,7 +10,7 @@ const UPLOAD_DELAY = 1000;
 // refオブジェクトに保存された値は更新しても再描画されない => 描画に関係ないデータの保持に利用
 // ------------------------------------------------------------------------------
 
-const ImageUploader = () => {
+export const ImageUploader = () => {
   // 隠されたinput要素の参照を保持するためのref (入る要素はinputタグかnullに固定。初期値はnull)
   const inputImageRef = useRef<HTMLInputElement | null>(null);
   // 選択されたファイルデータを保持するref
@@ -70,5 +70,3 @@ const ImageUploader = () => {
     </div>
   );
 };
-
-export default ImageUploader;

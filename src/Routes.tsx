@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Parent from "./components/MemoSample1";
-import { Parent as Parent2 } from "./components/MemoSample2";
-import { Parent as Parent3 } from "./components/UseCallbackSample";
-import { Parent as Parent4 } from "./components/UseContextSample";
-import Clock from "./components/UseEffectSample";
-import { Clock as Clock2 } from "./components/UseLayoutEffectSample";
+import { Parent as MemoSample1 } from "./components/MemoSample1";
+import { Parent as MemoSample2 } from "./components/MemoSample2";
+import { Parent as UseCallbackSample } from "./components/UseCallbackSample";
+import { Parent as UseContextSample } from "./components/UseContextSample";
+import { Clock as UseEffectSample } from "./components/UseEffectSample";
+import { Clock as UseLayoutEffect } from "./components/UseLayoutEffectSample";
 import UseMemoSample from "./components/UseMemoSample";
-import Counter2 from "./components/UseReducerSample";
-import ImageUploader from "./components/UseRefSample";
-import Counter from "./components/UseStateSample";
+import { Counter as UseReducerSample } from "./components/UseReducerSample";
+import { ImageUploader as UseRefSample } from "./components/UseRefSample";
+import { Counter as UseStateSample } from "./components/UseStateSample";
 
 export const Routing = () => {
   return (
@@ -16,20 +16,20 @@ export const Routing = () => {
       <Routes>
         <Route
           path={`/UseStateSample`}
-          element={<Counter initialValue={0} />}
+          element={<UseStateSample initialValue={0} />}
         />
         <Route
           path={`/UseReducerSample`}
-          element={<Counter2 initialValue={0} />}
+          element={<UseReducerSample initialValue={0} />}
         />
-        <Route path={`/MemoSample1`} element={<Parent />} />
-        <Route path={`/MemoSample2`} element={<Parent2 />} />
-        <Route path={`/UseCallbackSample`} element={<Parent3 />} />
+        <Route path={`/MemoSample1`} element={<MemoSample1 />} />
+        <Route path={`/MemoSample2`} element={<MemoSample2 />} />
+        <Route path={`/UseCallbackSample`} element={<UseCallbackSample />} />
         <Route path={`UseMemoSample`} element={<UseMemoSample />} />
-        <Route path={`UseEffectSample`} element={<Clock />} />
-        <Route path={`UseLayoutEffect`} element={<Clock2 />} />
-        <Route path={`useContextSample`} element={<Parent4 />} />
-        <Route path={`UseRefSample`} element={<ImageUploader />} />
+        <Route path={`UseEffectSample`} element={<UseEffectSample />} />
+        <Route path={`UseLayoutEffect`} element={<UseLayoutEffect />} />
+        <Route path={`useContextSample`} element={<UseContextSample />} />
+        <Route path={`UseRefSample`} element={<UseRefSample />} />
       </Routes>
     </BrowserRouter>
   );
