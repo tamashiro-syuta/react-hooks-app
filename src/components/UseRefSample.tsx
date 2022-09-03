@@ -4,10 +4,11 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const UPLOAD_DELAY = 1000;
 
-// -------------------------------------------
+// ------------------------------------------------------------------------------
 // useRef => 書き換え可能なrefオブジェクトを作成
 // refの使い方 => ①データの保持 ②DOMの参照
-// -------------------------------------------
+// refオブジェクトに保存された値は更新しても再描画されない => 描画に関係ないデータの保持に利用
+// ------------------------------------------------------------------------------
 
 const ImageUploader = () => {
   // 隠されたinput要素の参照を保持するためのref (入る要素はinputタグかnullに固定。初期値はnull)
@@ -20,17 +21,17 @@ const ImageUploader = () => {
   const onClickText = () => {
     if (inputImageRef.current !== null) {
       // inputのDOMにアクセスして、クリックイベントを発火する
-      // inputImageRef.current === input (inputImageRefはinputのrefに指定しているから)
+      // inputImageRef.currentには、input要素が入っている (inputImageRefは下のinputのrefに指定しているから)
       inputImageRef.current.click();
     }
   };
   // ファイルが選択された後に呼ばれるコールバック
-  // 引数eには、event(ここではonChange)が入る(https://ja.reactjs.org/docs/handling-events.html)
+  // 引数eには、呼び出し時に指定しなくても event(ここではonChange)が入る(https://ja.reactjs.org/docs/handling-events.html)
   const onChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files !== null && files.length > 0) {
       // fileRef.currentに値を保存する。
-      // fileRef.currentが変化しても再描画は発生しない
+      // fileRef.currentが変化しても再描画は発生しない(useRefを使っているから)
       fileRef.current = files[0];
     }
   };
@@ -38,7 +39,7 @@ const ImageUploader = () => {
   const onClickUpload = async () => {
     if (fileRef.current !== null) {
       // 通常はここでAPIを呼んで、ファイルをサーバーにアップロードする
-      // ここでは擬似的に一定時間(5秒)待つ
+      // ここでは擬似的に一定時間(1秒)待つ
       await sleep(UPLOAD_DELAY);
       // アップロードが成功した旨を表示するために、メッセージを書き換える
       setMessage(`${fileRef.current.name} のアップロードに成功しました`);
