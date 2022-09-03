@@ -3,6 +3,7 @@ import { Parent as MemoSample1 } from "./components/MemoSample1";
 import { Parent as MemoSample2 } from "./components/MemoSample2";
 import { Parent as UseCallbackSample } from "./components/UseCallbackSample";
 import { Parent as UseContextSample } from "./components/UseContextSample";
+import { Parent as UseImperativeHandleSample } from "./components/UseImperativeHandleSample";
 import { Clock as UseEffectSample } from "./components/UseEffectSample";
 import { Clock as UseLayoutEffect } from "./components/UseLayoutEffectSample";
 import UseMemoSample from "./components/UseMemoSample";
@@ -30,6 +31,10 @@ export const Routing = () => {
         <Route path={`UseLayoutEffect`} element={<UseLayoutEffect />} />
         <Route path={`useContextSample`} element={<UseContextSample />} />
         <Route path={`UseRefSample`} element={<UseRefSample />} />
+        <Route
+          path={`UseImperativeHandleSample`}
+          element={<UseImperativeHandleSample />}
+        />
       </Routes>
     </BrowserRouter>
   );
