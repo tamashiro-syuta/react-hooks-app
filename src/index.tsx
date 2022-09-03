@@ -64,6 +64,9 @@ root.render(
           UseImperativeHandleSample
         </MyButton>
       </Grid>
+      <Grid item xs={4}>
+        <MyButton href="/UseCustomHookSample">UseCustomHookSample</MyButton>
+      </Grid>
 
       <Grid item xs={12}>
         <Routing />

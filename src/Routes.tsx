@@ -10,6 +10,7 @@ import UseMemoSample from "./components/UseMemoSample";
 import { Counter as UseReducerSample } from "./components/UseReducerSample";
 import { ImageUploader as UseRefSample } from "./components/UseRefSample";
 import { Counter as UseStateSample } from "./components/UseStateSample";
+import { Input as UseCustomHookSample } from "./components/UseCustomHookSample";
 
 export const Routing = () => {
   return (
@@ -35,6 +36,7 @@ export const Routing = () => {
           path={`UseImperativeHandleSample`}
           element={<UseImperativeHandleSample />}
         />
+        <Route path={`UseCustomHookSample`} element={<UseCustomHookSample />} />
       </Routes>
     </BrowserRouter>
   );
