@@ -4,8 +4,10 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const UPLOAD_DELAY = 1000;
 
+// -------------------------------------------
 // useRef => 書き換え可能なrefオブジェクトを作成
 // refの使い方 => ①データの保持 ②DOMの参照
+// -------------------------------------------
 
 const ImageUploader = () => {
   // 隠されたinput要素の参照を保持するためのref (入る要素はinputタグかnullに固定。初期値はnull)
