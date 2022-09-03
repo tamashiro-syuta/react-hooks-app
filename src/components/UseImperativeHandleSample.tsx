@@ -26,12 +26,14 @@ export const Parent = () => {
   const onClick = () => {
     if (childRef.current !== null) {
       // 子のuseImperativeHandleで指定した値を参照
+      // childRef.currentには、Child要素が入る(下でChildをchildRefを紐付けているから)
       childRef.current.showMessage();
     }
   };
 
   return (
     <div>
+      {/* onClickは、ref経由でshowMessageを呼び出している */}
       <button onClick={onClick}>Show Message</button>
       {/* ChildコンポーネントとchildRefを紐付け */}
       <Child ref={childRef} />
