@@ -3,7 +3,10 @@ import React, { useState, useCallback } from "react";
 // ------------------------------------------------------------------------------
 // Decrement => 通常コンポーネント、通常関数 => 他の関数が呼ばれると、再レンダリング
 // Increment => メモ化コンポーネント、通常関数 => 他の関数が呼ばれると、再レンダリング
+// PlusTwoButton => 通常コンポーネント、useCallback関数で関数をメモ化 => 他の関数が呼ばれると、再レンダリング
 // Double => メモ化コンポーネント、useCallback関数で関数をメモ化 => 呼ばれない限り再レンダリングされない
+
+// 結果：メモ化コンポーネント + useCallback関数 でないとレンダリングされない
 // ------------------------------------------------------------------------------
 
 type ButtonProps = {
@@ -28,6 +31,15 @@ const IncrementButton = React.memo((props: ButtonProps) => {
   return <button onClick={onClick}>Increment</button>;
 });
 
+// PlusTwoButtonは通常の関数コンポーネントでボタンを表示する
+const PlusTwoButton = (props: ButtonProps) => {
+  const { onClick } = props;
+
+  console.log("PlusTwoButtonが再描画されました");
+
+  return <button onClick={onClick}>PlusTwoButton</button>;
+};
+
 // DoubleButtonはメモ化した関数コンポーネントでボタンを表示する
 const DoubleButton = React.memo((props: ButtonProps) => {
   const { onClick } = props;
@@ -48,6 +60,11 @@ export const Parent = () => {
   const increment = () => {
     setCount((c) => c + 1);
   };
+
+  // 通常の関数として定義
+  const plusTwo = useCallback(() => {
+    setCount((c) => c + 2)
+  }, [])
 
   // useCallbackを使って関数をメモ化する
   // useCallbackの第1引数は関数、第2引数は依存配列
@@ -71,6 +88,8 @@ export const Parent = () => {
       {/* メモ化コンポーネントに関数を渡す */}
       {/* メモ化はしているが、親コンポーネント(Parent)から渡される関数がuseCallbackされてないので、Prentがレンダリングされる度に、再レンダリングされる */}
       <IncrementButton onClick={increment} />
+      {/* メモ化コンポーネントに通常の関数を渡す */}
+      <PlusTwoButton onClick={plusTwo} />
       {/* メモ化コンポーネントにメモ化した関数を渡す */}
       <DoubleButton onClick={double} />
     </div>
