@@ -19,9 +19,12 @@ export const ImageUploader = () => {
 
   // 「画像をアップロード」というテキストがクリックされた時のコールバック
   const onClickText = () => {
+    console.log('onClickText')
     if (inputImageRef.current !== null) {
       // inputのDOMにアクセスして、クリックイベントを発火する
       // inputImageRef.currentには、input要素が入っている (inputImageRefは下のinputのrefに指定しているから)
+      console.log(`↓inputImageRef↓`)
+      console.log(inputImageRef)
       inputImageRef.current.click();
     }
   };
